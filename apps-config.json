@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 2,
+  "sales": {
+    "active": false
+  },
+  "flags": {},
+  "bundles": [],
+  "crossPromo": []
+}
