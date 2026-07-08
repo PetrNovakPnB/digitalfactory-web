@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index,follow">
   <title>Privacy Policy — PixelPerfect: HEIC & WebP to JPG Converter</title>
+
+  <!-- SEO: one canonical URL, language selected client-side. -->
+  <link rel="canonical" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html">
+  <link rel="alternate" hreflang="en" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=en">
+  <link rel="alternate" hreflang="cs" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=cs">
+  <link rel="alternate" hreflang="x-default" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html">
+
   <style>
     :root { color-scheme: light dark; }
     body {
@@ -28,59 +35,258 @@
     ul { padding-left: 1.25rem; }
     strong { font-weight: 600; }
     footer { margin-top: 3rem; font-size: .85rem; color: #888; }
+
+    /* Language switcher */
+    .langbar { display: flex; justify-content: flex-end; margin-bottom: .5rem; }
+    .langbar label { font-size: .85rem; color: #666; display: inline-flex; align-items: center; gap: .4rem; }
+    @media (prefers-color-scheme: dark) { .langbar label { color: #9a9a9a; } }
+    .langbar select {
+      font: inherit; font-size: .9rem; padding: .25rem 1.75rem .25rem .5rem;
+      border: 1px solid rgba(128,128,128,.4); border-radius: 6px;
+      background: transparent; color: inherit; cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy — PixelPerfect: HEIC & WebP to JPG Converter</h1>
-  <p class="meta"><strong>Last updated:</strong> 2026-07-05</p>
-  <p class="meta"><strong>Applies to:</strong> PixelPerfect: HEIC & WebP to JPG Converter (Microsoft Store)</p>
+  <div class="langbar">
+    <label>
+      <span id="langbar-label">Language</span>
+      <select id="lang-select" aria-label="Language"></select>
+    </label>
+  </div>
+
+  <h1 id="title"></h1>
+  <p class="meta"><strong id="updated-label"></strong> <span id="updated-value"></span></p>
+  <p class="meta"><strong id="applies-label"></strong> <span id="applies-value"></span></p>
 
   <hr>
 
-  <h2>Summary</h2>
-  <p>PixelPerfect works <strong>fully offline</strong>. Your photos and their contents never leave
-  your computer. We do not run servers that receive your files, we do not have
-  accounts, and we cannot see what you convert.</p>
+  <h2 id="summary-h"></h2>
+  <div id="summary-body"></div>
 
-  <h2>What data we collect</h2>
-  <p><strong>None of your content.</strong> All image conversion happens locally on your device.
-  Your photos, the videos extracted from Live Photos, and their EXIF metadata
-  (including GPS location and capture date) are read and written only on your own
-  computer. They are never uploaded, transmitted, or shared.</p>
-  <p>The application does not collect analytics, usage statistics, or telemetry, and
-  it does not track you.</p>
+  <h2 id="collect-h"></h2>
+  <div id="collect-body"></div>
 
-  <h2>Optional connected features (off by default / user-initiated)</h2>
-  <p>The core conversion feature needs no internet connection. A small number of
-  optional features may connect to the internet, and only when you use or enable
-  them:</p>
-  <ul>
-    <li><strong>Purchasing the full version</strong> — handled entirely by the Microsoft Store. We
-    never see your payment details.</li>
-    <li><strong>Rating the app</strong> — opens the Microsoft Store rating dialog at your request.</li>
-    <li><strong>Promotional / remote configuration content</strong> — if enabled, the app may fetch
-    promotional messages. This is optional and can be turned off in the app's
-    Privacy settings.</li>
-    <li><strong>Crash reports</strong> — if you opt in, a crash report may be sent to help us fix
-    problems. This is opt-in and off by default.</li>
-  </ul>
-  <p>None of these optional features transmit the photos you convert.</p>
+  <h2 id="optional-h"></h2>
+  <div id="optional-body"></div>
 
-  <h2>Data storage</h2>
-  <p>Application settings (such as your chosen language, theme and default output
-  format) and license state are stored locally on your computer under your user
-  profile. This data stays on your device.</p>
+  <h2 id="storage-h"></h2>
+  <div id="storage-body"></div>
 
-  <h2>Children's privacy</h2>
-  <p>The application is a general-purpose utility and is not directed at children. It
-  collects no personal data.</p>
+  <h2 id="children-h"></h2>
+  <div id="children-body"></div>
 
-  <h2>Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be published at the same URL and
-  the "Last updated" date above will change.</p>
+  <h2 id="changes-h"></h2>
+  <div id="changes-body"></div>
 
-  <h2>Contact</h2>
-  <p>For privacy questions, contact us at:
-  <a href="mailto:digitalfactorysupport@gmail.com">digitalfactorysupport@gmail.com</a>.</p>
+  <h2 id="contact-h"></h2>
+  <div id="contact-body"></div>
+
+  <script>
+  /*
+   * Multilingual privacy policy — single canonical URL, language chosen client-side.
+   *
+   * TO ADD A LANGUAGE (mirrors adding Resources/{code}.json in the app):
+   *   1. Add a "<code>" block to I18N below (copy "en", translate every field).
+   *   2. Add the language to LANGS (order = order in the switcher).
+   *   3. Add a <link rel="alternate" hreflang="<code>" ...?lang=<code>> in <head>.
+   * That is all — no build step. Shared, non-translated data (date, app name,
+   * support email) lives in SHARED and is injected into every language.
+   */
+  const SHARED = {
+    updatedValue: "2026-07-05",
+    appName: "PixelPerfect: HEIC & WebP to JPG Converter",
+    supportEmail: "digitalfactorysupport@gmail.com"
+  };
+
+  // Languages offered in the switcher, in display order. label = endonym.
+  const LANGS = [
+    { code: "en", label: "English" },
+    { code: "cs", label: "Čeština" }
+  ];
+
+  const I18N = {
+    en: {
+      langLabel: "Language",
+      title: "Privacy Policy — " + SHARED.appName,
+      updatedLabel: "Last updated:",
+      appliesLabel: "Applies to:",
+      appliesValue: SHARED.appName + " (Microsoft Store)",
+      summaryH: "Summary",
+      summaryBody:
+        "<p>PixelPerfect works <strong>fully offline</strong>. Your photos and their contents never leave " +
+        "your computer. We do not run servers that receive your files, we do not have " +
+        "accounts, and we cannot see what you convert.</p>",
+      collectH: "What data we collect",
+      collectBody:
+        "<p><strong>None of your content.</strong> All image conversion happens locally on your device. " +
+        "Your photos, the videos extracted from Live Photos, and their EXIF metadata " +
+        "(including GPS location and capture date) are read and written only on your own " +
+        "computer. They are never uploaded, transmitted, or shared.</p>" +
+        "<p>The application does not collect analytics, usage statistics, or telemetry, and " +
+        "it does not track you.</p>",
+      optionalH: "Optional connected features (off by default / user-initiated)",
+      optionalBody:
+        "<p>The core conversion feature needs no internet connection. A small number of " +
+        "optional features may connect to the internet, and only when you use or enable " +
+        "them:</p>" +
+        "<ul>" +
+        "<li><strong>Purchasing the full version</strong> — handled entirely by the Microsoft Store. We " +
+        "never see your payment details.</li>" +
+        "<li><strong>Rating the app</strong> — opens the Microsoft Store rating dialog at your request.</li>" +
+        "<li><strong>Promotional / remote configuration content</strong> — if enabled, the app may fetch " +
+        "promotional messages. This is optional and can be turned off in the app's " +
+        "Privacy settings.</li>" +
+        "<li><strong>Crash reports</strong> — if you opt in, a crash report may be sent to help us fix " +
+        "problems. This is opt-in and off by default.</li>" +
+        "</ul>" +
+        "<p>None of these optional features transmit the photos you convert.</p>",
+      storageH: "Data storage",
+      storageBody:
+        "<p>Application settings (such as your chosen language, theme and default output " +
+        "format) and license state are stored locally on your computer under your user " +
+        "profile. This data stays on your device.</p>",
+      childrenH: "Children's privacy",
+      childrenBody:
+        "<p>The application is a general-purpose utility and is not directed at children. It " +
+        "collects no personal data.</p>",
+      changesH: "Changes to this policy",
+      changesBody:
+        "<p>If this policy changes, the updated version will be published at the same URL and " +
+        "the “Last updated” date above will change.</p>",
+      contactH: "Contact",
+      contactBody:
+        "<p>For privacy questions, contact us at: " +
+        "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a>.</p>"
+    },
+
+    cs: {
+      langLabel: "Jazyk",
+      title: "Zásady ochrany osobních údajů — " + SHARED.appName,
+      updatedLabel: "Naposledy aktualizováno:",
+      appliesLabel: "Vztahuje se na:",
+      appliesValue: SHARED.appName + " (Microsoft Store)",
+      summaryH: "Shrnutí",
+      summaryBody:
+        "<p>PixelPerfect funguje <strong>plně offline</strong>. Vaše fotografie a jejich obsah nikdy " +
+        "neopustí váš počítač. Neprovozujeme žádné servery, které by přijímaly vaše soubory, " +
+        "nemáme uživatelské účty a nevidíme, co převádíte.</p>",
+      collectH: "Jaká data shromažďujeme",
+      collectBody:
+        "<p><strong>Žádný váš obsah.</strong> Veškerý převod obrázků probíhá lokálně na vašem zařízení. " +
+        "Vaše fotografie, videa extrahovaná z Live Photos i jejich metadata EXIF " +
+        "(včetně GPS polohy a data pořízení) se čtou a zapisují pouze ve vašem vlastním " +
+        "počítači. Nikdy nejsou nahrávána, přenášena ani sdílena.</p>" +
+        "<p>Aplikace neshromažďuje žádné analytické údaje, statistiky používání ani telemetrii " +
+        "a nijak vás nesleduje.</p>",
+      optionalH: "Volitelné připojené funkce (ve výchozím stavu vypnuté / spouštěné uživatelem)",
+      optionalBody:
+        "<p>Hlavní funkce převodu žádné připojení k internetu nepotřebuje. Malá část " +
+        "volitelných funkcí se může připojit k internetu, a to pouze když je použijete nebo " +
+        "zapnete:</p>" +
+        "<ul>" +
+        "<li><strong>Nákup plné verze</strong> — vyřizuje výhradně Microsoft Store. Vaše platební " +
+        "údaje nikdy nevidíme.</li>" +
+        "<li><strong>Hodnocení aplikace</strong> — na vaši žádost otevře dialog hodnocení v Microsoft Store.</li>" +
+        "<li><strong>Propagační obsah / vzdálená konfigurace</strong> — je-li zapnuto, aplikace může " +
+        "načíst propagační zprávy. Tato funkce je volitelná a lze ji vypnout v nastavení " +
+        "Soukromí v aplikaci.</li>" +
+        "<li><strong>Hlášení o pádech</strong> — pokud to povolíte, může být odesláno hlášení o pádu, " +
+        "které nám pomůže odstranit problémy. Tato funkce vyžaduje váš souhlas a je ve " +
+        "výchozím stavu vypnutá.</li>" +
+        "</ul>" +
+        "<p>Žádná z těchto volitelných funkcí nepřenáší fotografie, které převádíte.</p>",
+      storageH: "Ukládání dat",
+      storageBody:
+        "<p>Nastavení aplikace (například zvolený jazyk, motiv a výchozí výstupní formát) " +
+        "a stav licence se ukládají lokálně ve vašem počítači ve vašem uživatelském profilu. " +
+        "Tato data zůstávají na vašem zařízení.</p>",
+      childrenH: "Ochrana soukromí dětí",
+      childrenBody:
+        "<p>Aplikace je univerzální nástroj a není určena dětem. Neshromažďuje žádné osobní " +
+        "údaje.</p>",
+      changesH: "Změny těchto zásad",
+      changesBody:
+        "<p>Pokud se tyto zásady změní, aktualizovaná verze bude zveřejněna na stejné adrese URL " +
+        "a výše uvedené datum „Naposledy aktualizováno“ se změní.</p>",
+      contactH: "Kontakt",
+      contactBody:
+        "<p>S dotazy ohledně soukromí se na nás obraťte na adrese: " +
+        "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a>.</p>"
+    }
+  };
+
+  const DEFAULT_LANG = "en";
+  const STORAGE_KEY = "pp-privacy-lang";
+
+  function supported(code) {
+    if (!code) return null;
+    code = code.toLowerCase();
+    if (I18N[code]) return code;
+    const base = code.split("-")[0];      // e.g. "cs-CZ" -> "cs"
+    return I18N[base] ? base : null;
+  }
+
+  // Resolution order mirrors the app's LanguageResolver:
+  //   ?lang= (deep link) -> saved preference -> browser language(s) -> en.
+  function resolveLang() {
+    const q = supported(new URLSearchParams(location.search).get("lang"));
+    if (q) return q;
+    let saved = null;
+    try { saved = supported(localStorage.getItem(STORAGE_KEY)); } catch (e) {}
+    if (saved) return saved;
+    const nav = navigator.languages || [navigator.language];
+    for (const l of nav) { const m = supported(l); if (m) return m; }
+    return DEFAULT_LANG;
+  }
+
+  function setText(id, value) { document.getElementById(id).textContent = value; }
+  function setHtml(id, value) { document.getElementById(id).innerHTML = value; }
+
+  function render(lang) {
+    const t = I18N[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title;
+
+    setText("langbar-label", t.langLabel);
+    setText("title", t.title);
+    setText("updated-label", t.updatedLabel);
+    setText("updated-value", SHARED.updatedValue);
+    setText("applies-label", t.appliesLabel);
+    setText("applies-value", t.appliesValue);
+
+    setText("summary-h", t.summaryH);   setHtml("summary-body", t.summaryBody);
+    setText("collect-h", t.collectH);   setHtml("collect-body", t.collectBody);
+    setText("optional-h", t.optionalH); setHtml("optional-body", t.optionalBody);
+    setText("storage-h", t.storageH);   setHtml("storage-body", t.storageBody);
+    setText("children-h", t.childrenH); setHtml("children-body", t.childrenBody);
+    setText("changes-h", t.changesH);   setHtml("changes-body", t.changesBody);
+    setText("contact-h", t.contactH);   setHtml("contact-body", t.contactBody);
+
+    document.getElementById("lang-select").value = lang;
+  }
+
+  function buildSwitcher(current) {
+    const sel = document.getElementById("lang-select");
+    for (const { code, label } of LANGS) {
+      const opt = document.createElement("option");
+      opt.value = code; opt.textContent = label;
+      sel.appendChild(opt);
+    }
+    sel.value = current;
+    sel.addEventListener("change", () => {
+      const lang = sel.value;
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      const url = new URL(location.href);
+      url.searchParams.set("lang", lang);
+      history.replaceState(null, "", url);
+      render(lang);
+    });
+  }
+
+  const initial = resolveLang();
+  buildSwitcher(initial);
+  render(initial);
+  </script>
 </body>
 </html>
