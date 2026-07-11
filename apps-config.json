@@ -1,11 +1,5 @@
 {
   "schemaVersion": 2,
-  "sales": {
-    "active": true,
-    "title": "Digital Factory Summer Sale",
-    "discountLabel": "-40%",
-    "endUtc": "2026-08-31T23:59:59Z"
-  },
   "crossPromo": [
     { "appId": "SmartHeic", "title": "PixelPerfect - HEIC to JPG Converter", "price": "$9.99", "originalPrice": "$16.99", "url": "ms-windows-store://pdp/?productid=9PCR9RCX3K6X" },
     { "appId": "PdfMerger", "title": "PDF Merger", "price": "$9.99", "originalPrice": "$16.99", "url": "ms-windows-store://pdp/?productid=TBD-PDFMERGER" },
