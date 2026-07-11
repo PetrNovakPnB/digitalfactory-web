@@ -10,6 +10,11 @@
   <link rel="canonical" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html">
   <link rel="alternate" hreflang="en" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=en">
   <link rel="alternate" hreflang="cs" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=cs">
+  <link rel="alternate" hreflang="de" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=de">
+  <link rel="alternate" hreflang="es" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=es">
+  <link rel="alternate" hreflang="hi" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=hi">
+  <link rel="alternate" hreflang="ja" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=ja">
+  <link rel="alternate" hreflang="pt" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html?lang=pt">
   <link rel="alternate" hreflang="x-default" href="https://petrnovakpnb.github.io/digitalfactory-web/pixelperfect-heic-privacy.html">
 
   <style>
@@ -102,7 +107,12 @@
   // Languages offered in the switcher, in display order. label = endonym.
   const LANGS = [
     { code: "en", label: "English" },
-    { code: "cs", label: "Čeština" }
+    { code: "cs", label: "Čeština" },
+    { code: "de", label: "Deutsch" },
+    { code: "es", label: "Español" },
+    { code: "hi", label: "हिन्दी" },
+    { code: "ja", label: "日本語" },
+    { code: "pt", label: "Português" }
   ];
 
   const I18N = {
@@ -212,6 +222,256 @@
       contactH: "Kontakt",
       contactBody:
         "<p>S dotazy ohledně soukromí se na nás obraťte na adrese: " +
+        "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a>.</p>"
+    },
+
+    de: {
+      langLabel: "Sprache",
+      title: "Datenschutzerklärung — " + SHARED.appName,
+      updatedLabel: "Zuletzt aktualisiert:",
+      appliesLabel: "Gilt für:",
+      appliesValue: SHARED.appName + " (Microsoft Store)",
+      summaryH: "Zusammenfassung",
+      summaryBody:
+        "<p>PixelPerfect arbeitet <strong>vollständig offline</strong>. Ihre Fotos und deren Inhalte verlassen " +
+        "niemals Ihren Computer. Wir betreiben keine Server, die Ihre Dateien empfangen, wir haben keine " +
+        "Konten und wir können nicht sehen, was Sie umwandeln.</p>",
+      collectH: "Welche Daten wir erfassen",
+      collectBody:
+        "<p><strong>Keine Ihrer Inhalte.</strong> Die gesamte Bildumwandlung erfolgt lokal auf Ihrem Gerät. " +
+        "Ihre Fotos, die aus Live Photos extrahierten Videos und deren EXIF-Metadaten (einschließlich " +
+        "GPS-Standort und Aufnahmedatum) werden nur auf Ihrem eigenen Computer gelesen und geschrieben. " +
+        "Sie werden niemals hochgeladen, übertragen oder geteilt.</p>" +
+        "<p>Die Anwendung erfasst keine Analysen, Nutzungsstatistiken oder Telemetrie und verfolgt Sie nicht.</p>",
+      optionalH: "Optionale verbundene Funktionen (standardmäßig aus / vom Nutzer gestartet)",
+      optionalBody:
+        "<p>Die Kernfunktion der Umwandlung benötigt keine Internetverbindung. Einige wenige optionale " +
+        "Funktionen können sich mit dem Internet verbinden, und nur wenn Sie sie verwenden oder aktivieren:</p>" +
+        "<ul>" +
+        "<li><strong>Kauf der Vollversion</strong> — wird vollständig vom Microsoft Store abgewickelt. Wir sehen " +
+        "Ihre Zahlungsdaten niemals.</li>" +
+        "<li><strong>Bewerten der App</strong> — öffnet auf Ihren Wunsch den Bewertungsdialog des Microsoft Store.</li>" +
+        "<li><strong>Werbe- / Fernkonfigurationsinhalte</strong> — falls aktiviert, kann die App Werbebotschaften " +
+        "abrufen. Dies ist optional und kann in den Datenschutzeinstellungen der App deaktiviert werden.</li>" +
+        "<li><strong>Absturzberichte</strong> — wenn Sie zustimmen, kann ein Absturzbericht gesendet werden, um " +
+        "uns bei der Behebung von Problemen zu helfen. Dies ist freiwillig und standardmäßig deaktiviert.</li>" +
+        "</ul>" +
+        "<p>Keine dieser optionalen Funktionen überträgt die Fotos, die Sie umwandeln.</p>",
+      storageH: "Datenspeicherung",
+      storageBody:
+        "<p>Anwendungseinstellungen (wie Ihre gewählte Sprache, das Design und das Standardausgabeformat) sowie " +
+        "der Lizenzstatus werden lokal auf Ihrem Computer in Ihrem Benutzerprofil gespeichert. Diese Daten " +
+        "bleiben auf Ihrem Gerät.</p>",
+      childrenH: "Datenschutz für Kinder",
+      childrenBody:
+        "<p>Die Anwendung ist ein universelles Werkzeug und richtet sich nicht an Kinder. Sie erfasst keine " +
+        "personenbezogenen Daten.</p>",
+      changesH: "Änderungen dieser Erklärung",
+      changesBody:
+        "<p>Wenn sich diese Erklärung ändert, wird die aktualisierte Version unter derselben URL veröffentlicht " +
+        "und das oben genannte Datum „Zuletzt aktualisiert“ wird geändert.</p>",
+      contactH: "Kontakt",
+      contactBody:
+        "<p>Bei Fragen zum Datenschutz erreichen Sie uns unter: " +
+        "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a>.</p>"
+    },
+
+    es: {
+      langLabel: "Idioma",
+      title: "Política de privacidad — " + SHARED.appName,
+      updatedLabel: "Última actualización:",
+      appliesLabel: "Se aplica a:",
+      appliesValue: SHARED.appName + " (Microsoft Store)",
+      summaryH: "Resumen",
+      summaryBody:
+        "<p>PixelPerfect funciona <strong>completamente sin conexión</strong>. Tus fotos y su contenido nunca " +
+        "salen de tu ordenador. No tenemos servidores que reciban tus archivos, no hay cuentas y no podemos " +
+        "ver lo que conviertes.</p>",
+      collectH: "Qué datos recopilamos",
+      collectBody:
+        "<p><strong>Ninguno de tu contenido.</strong> Toda la conversión de imágenes ocurre localmente en tu " +
+        "dispositivo. Tus fotos, los vídeos extraídos de las Live Photos y sus metadatos EXIF (incluidas la " +
+        "ubicación GPS y la fecha de captura) se leen y escriben únicamente en tu propio ordenador. Nunca se " +
+        "suben, transmiten ni comparten.</p>" +
+        "<p>La aplicación no recopila analíticas, estadísticas de uso ni telemetría, y no te rastrea.</p>",
+      optionalH: "Funciones conectadas opcionales (desactivadas por defecto / iniciadas por el usuario)",
+      optionalBody:
+        "<p>La función principal de conversión no necesita conexión a internet. Un pequeño número de funciones " +
+        "opcionales puede conectarse a internet, y solo cuando las usas o las activas:</p>" +
+        "<ul>" +
+        "<li><strong>Compra de la versión completa</strong> — gestionada íntegramente por Microsoft Store. Nunca " +
+        "vemos tus datos de pago.</li>" +
+        "<li><strong>Valorar la aplicación</strong> — abre el diálogo de valoración de Microsoft Store cuando lo " +
+        "solicitas.</li>" +
+        "<li><strong>Contenido promocional / configuración remota</strong> — si está activado, la app puede " +
+        "descargar mensajes promocionales. Es opcional y se puede desactivar en los ajustes de Privacidad de la app.</li>" +
+        "<li><strong>Informes de fallos</strong> — si lo aceptas, se puede enviar un informe de fallo para " +
+        "ayudarnos a solucionar problemas. Es voluntario y está desactivado por defecto.</li>" +
+        "</ul>" +
+        "<p>Ninguna de estas funciones opcionales transmite las fotos que conviertes.</p>",
+      storageH: "Almacenamiento de datos",
+      storageBody:
+        "<p>Los ajustes de la aplicación (como el idioma elegido, el tema y el formato de salida predeterminado) " +
+        "y el estado de la licencia se guardan localmente en tu ordenador, en tu perfil de usuario. Estos datos " +
+        "permanecen en tu dispositivo.</p>",
+      childrenH: "Privacidad de los menores",
+      childrenBody:
+        "<p>La aplicación es una herramienta de uso general y no está dirigida a menores. No recopila ningún " +
+        "dato personal.</p>",
+      changesH: "Cambios en esta política",
+      changesBody:
+        "<p>Si esta política cambia, la versión actualizada se publicará en la misma URL y la fecha de " +
+        "«Última actualización» indicada arriba se modificará.</p>",
+      contactH: "Contacto",
+      contactBody:
+        "<p>Para preguntas sobre privacidad, contáctanos en: " +
+        "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a>.</p>"
+    },
+
+    hi: {
+      langLabel: "भाषा",
+      title: "गोपनीयता नीति — " + SHARED.appName,
+      updatedLabel: "अंतिम बार अपडेट किया गया:",
+      appliesLabel: "लागू होता है:",
+      appliesValue: SHARED.appName + " (Microsoft Store)",
+      summaryH: "सारांश",
+      summaryBody:
+        "<p>PixelPerfect <strong>पूरी तरह ऑफ़लाइन</strong> काम करता है। आपकी फ़ोटो और उनकी सामग्री कभी आपके कंप्यूटर " +
+        "से बाहर नहीं जाती। हम ऐसे सर्वर नहीं चलाते जो आपकी फ़ाइलें प्राप्त करें, हमारे पास कोई खाता नहीं है, और हम नहीं " +
+        "देख सकते कि आप क्या बदलते हैं।</p>",
+      collectH: "हम कौन-सा डेटा एकत्र करते हैं",
+      collectBody:
+        "<p><strong>आपकी कोई सामग्री नहीं।</strong> सारी इमेज कन्वर्ज़न आपके डिवाइस पर स्थानीय रूप से होती है। आपकी " +
+        "फ़ोटो, Live Photos से निकाले गए वीडियो और उनका EXIF मेटाडेटा (GPS स्थान और खींचने की तारीख सहित) केवल आपके " +
+        "अपने कंप्यूटर पर पढ़े और लिखे जाते हैं। इन्हें कभी अपलोड, प्रसारित या साझा नहीं किया जाता।</p>" +
+        "<p>ऐप्लिकेशन कोई एनालिटिक्स, उपयोग आँकड़े या टेलीमेट्री एकत्र नहीं करता और आपको ट्रैक नहीं करता।</p>",
+      optionalH: "वैकल्पिक कनेक्टेड सुविधाएँ (डिफ़ॉल्ट रूप से बंद / उपयोगकर्ता द्वारा शुरू)",
+      optionalBody:
+        "<p>मुख्य कन्वर्ज़न सुविधा को किसी इंटरनेट कनेक्शन की ज़रूरत नहीं है। कुछ वैकल्पिक सुविधाएँ इंटरनेट से जुड़ सकती " +
+        "हैं, और केवल तब जब आप उन्हें उपयोग या सक्षम करते हैं:</p>" +
+        "<ul>" +
+        "<li><strong>पूर्ण संस्करण खरीदना</strong> — पूरी तरह Microsoft Store द्वारा संभाला जाता है। हम आपके भुगतान " +
+        "विवरण कभी नहीं देखते।</li>" +
+        "<li><strong>ऐप को रेट करना</strong> — आपके अनुरोध पर Microsoft Store का रेटिंग डायलॉग खोलता है।</li>" +
+        "<li><strong>प्रचार / रिमोट कॉन्फ़िगरेशन सामग्री</strong> — सक्षम होने पर, ऐप प्रचार संदेश डाउनलोड कर सकता है। " +
+        "यह वैकल्पिक है और इसे ऐप की गोपनीयता सेटिंग्स में बंद किया जा सकता है।</li>" +
+        "<li><strong>क्रैश रिपोर्ट</strong> — यदि आप सहमति देते हैं, तो समस्याओं को ठीक करने में हमारी मदद के लिए क्रैश " +
+        "रिपोर्ट भेजी जा सकती है। यह वैकल्पिक है और डिफ़ॉल्ट रूप से बंद है।</li>" +
+        "</ul>" +
+        "<p>इनमें से कोई भी वैकल्पिक सुविधा आपके द्वारा बदली गई फ़ोटो को प्रसारित नहीं करती।</p>",
+      storageH: "डेटा भंडारण",
+      storageBody:
+        "<p>ऐप्लिकेशन सेटिंग्स (जैसे आपकी चुनी हुई भाषा, थीम और डिफ़ॉल्ट आउटपुट फ़ॉर्मेट) और लाइसेंस स्थिति आपके कंप्यूटर " +
+        "पर आपके उपयोगकर्ता प्रोफ़ाइल में स्थानीय रूप से संग्रहीत होती हैं। यह डेटा आपके डिवाइस पर ही रहता है।</p>",
+      childrenH: "बच्चों की गोपनीयता",
+      childrenBody:
+        "<p>यह ऐप्लिकेशन एक सामान्य-उद्देश्य उपकरण है और बच्चों के लिए निर्देशित नहीं है। यह कोई व्यक्तिगत डेटा एकत्र " +
+        "नहीं करता।</p>",
+      changesH: "इस नीति में बदलाव",
+      changesBody:
+        "<p>यदि यह नीति बदलती है, तो अद्यतन संस्करण उसी URL पर प्रकाशित किया जाएगा और ऊपर दी गई „अंतिम बार अपडेट किया " +
+        "गया“ तारीख बदल जाएगी।</p>",
+      contactH: "संपर्क",
+      contactBody:
+        "<p>गोपनीयता संबंधी प्रश्नों के लिए, हमसे यहाँ संपर्क करें: " +
+        "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a></p>"
+    },
+
+    ja: {
+      langLabel: "言語",
+      title: "プライバシーポリシー — " + SHARED.appName,
+      updatedLabel: "最終更新日:",
+      appliesLabel: "対象:",
+      appliesValue: SHARED.appName + "（Microsoft Store）",
+      summaryH: "概要",
+      summaryBody:
+        "<p>PixelPerfect は<strong>完全にオフライン</strong>で動作します。あなたの写真やその内容が端末の外に出ることは " +
+        "ありません。ファイルを受け取るサーバーは運用しておらず、アカウントもなく、あなたが何を変換したかを見る " +
+        "こともできません。</p>",
+      collectH: "収集するデータ",
+      collectBody:
+        "<p><strong>あなたのコンテンツは一切収集しません。</strong>画像の変換はすべてお使いの端末上でローカルに行わ " +
+        "れます。写真、Live Photos から抽出された動画、およびその EXIF メタデータ（GPS 位置や撮影日を含む）は、あなた " +
+        "自身のコンピューター上でのみ読み書きされます。アップロード・送信・共有されることは決してありません。</p>" +
+        "<p>アプリは分析、利用統計、テレメトリを収集せず、あなたを追跡しません。</p>",
+      optionalH: "任意の接続機能（既定でオフ / ユーザーが開始）",
+      optionalBody:
+        "<p>中心となる変換機能はインターネット接続を必要としません。ごく一部の任意機能は、あなたが使用または有効に " +
+        "した場合にのみインターネットに接続することがあります:</p>" +
+        "<ul>" +
+        "<li><strong>完全版の購入</strong> — すべて Microsoft Store が処理します。お支払い情報を当社が見ることは " +
+        "ありません。</li>" +
+        "<li><strong>アプリの評価</strong> — ご要望に応じて Microsoft Store の評価ダイアログを開きます。</li>" +
+        "<li><strong>プロモーション / リモート構成コンテンツ</strong> — 有効な場合、アプリはプロモーションメッセージを " +
+        "取得することがあります。これは任意で、アプリのプライバシー設定でオフにできます。</li>" +
+        "<li><strong>クラッシュレポート</strong> — 同意いただいた場合、問題の修正に役立てるためクラッシュレポートが " +
+        "送信されることがあります。これは任意で、既定ではオフです。</li>" +
+        "</ul>" +
+        "<p>これらの任意機能が、あなたが変換した写真を送信することはありません。</p>",
+      storageH: "データの保存",
+      storageBody:
+        "<p>アプリの設定（選択した言語、テーマ、既定の出力形式など）とライセンス状態は、お使いのコンピューターの " +
+        "ユーザープロファイル内にローカルに保存されます。これらのデータは端末内にとどまります。</p>",
+      childrenH: "子どものプライバシー",
+      childrenBody:
+        "<p>本アプリは汎用ユーティリティであり、子どもを対象としていません。個人データを一切収集しません。</p>",
+      changesH: "本ポリシーの変更",
+      changesBody:
+        "<p>本ポリシーが変更された場合、更新版は同じ URL で公開され、上記の「最終更新日」が変更されます。</p>",
+      contactH: "お問い合わせ",
+      contactBody:
+        "<p>プライバシーに関するご質問は、次の連絡先までお問い合わせください: " +
+        "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a></p>"
+    },
+
+    pt: {
+      langLabel: "Idioma",
+      title: "Política de Privacidade — " + SHARED.appName,
+      updatedLabel: "Última atualização:",
+      appliesLabel: "Aplica-se a:",
+      appliesValue: SHARED.appName + " (Microsoft Store)",
+      summaryH: "Resumo",
+      summaryBody:
+        "<p>O PixelPerfect funciona <strong>totalmente offline</strong>. Suas fotos e o conteúdo delas nunca saem " +
+        "do seu computador. Não operamos servidores que recebam seus arquivos, não temos contas e não " +
+        "conseguimos ver o que você converte.</p>",
+      collectH: "Quais dados coletamos",
+      collectBody:
+        "<p><strong>Nenhum do seu conteúdo.</strong> Toda a conversão de imagens acontece localmente no seu " +
+        "dispositivo. Suas fotos, os vídeos extraídos das Live Photos e os metadados EXIF delas (incluindo " +
+        "localização GPS e data de captura) são lidos e gravados apenas no seu próprio computador. Eles nunca " +
+        "são enviados, transmitidos ou compartilhados.</p>" +
+        "<p>O aplicativo não coleta análises, estatísticas de uso nem telemetria, e não rastreia você.</p>",
+      optionalH: "Recursos conectados opcionais (desativados por padrão / iniciados pelo usuário)",
+      optionalBody:
+        "<p>O recurso principal de conversão não precisa de conexão com a internet. Um pequeno número de recursos " +
+        "opcionais pode se conectar à internet, e somente quando você os usa ou ativa:</p>" +
+        "<ul>" +
+        "<li><strong>Compra da versão completa</strong> — feita inteiramente pela Microsoft Store. Nunca vemos " +
+        "seus dados de pagamento.</li>" +
+        "<li><strong>Avaliar o aplicativo</strong> — abre a caixa de avaliação da Microsoft Store a seu pedido.</li>" +
+        "<li><strong>Conteúdo promocional / configuração remota</strong> — se ativado, o app pode baixar mensagens " +
+        "promocionais. Isso é opcional e pode ser desativado nas configurações de Privacidade do app.</li>" +
+        "<li><strong>Relatórios de falhas</strong> — se você aceitar, um relatório de falha pode ser enviado para " +
+        "nos ajudar a corrigir problemas. Isso é opcional e vem desativado por padrão.</li>" +
+        "</ul>" +
+        "<p>Nenhum desses recursos opcionais transmite as fotos que você converte.</p>",
+      storageH: "Armazenamento de dados",
+      storageBody:
+        "<p>As configurações do aplicativo (como o idioma escolhido, o tema e o formato de saída padrão) e o " +
+        "estado da licença são armazenados localmente no seu computador, no seu perfil de usuário. Esses dados " +
+        "permanecem no seu dispositivo.</p>",
+      childrenH: "Privacidade das crianças",
+      childrenBody:
+        "<p>O aplicativo é uma ferramenta de uso geral e não é direcionado a crianças. Ele não coleta nenhum " +
+        "dado pessoal.</p>",
+      changesH: "Alterações nesta política",
+      changesBody:
+        "<p>Se esta política mudar, a versão atualizada será publicada na mesma URL e a data de " +
+        "“Última atualização” acima será alterada.</p>",
+      contactH: "Contato",
+      contactBody:
+        "<p>Para dúvidas sobre privacidade, entre em contato conosco em: " +
         "<a href=\"mailto:" + SHARED.supportEmail + "\">" + SHARED.supportEmail + "</a>.</p>"
     }
   };
